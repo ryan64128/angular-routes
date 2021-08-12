@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a{
+    color: rgb(219, 248, 247);
+    text-decoration: none;
+}
+
+td{
+    padding: 1rem;
+}
+
+.mat-raised-button.mat-disabled, .mat-flat-button.mat-disabled{
+    background-color: rgb(0, 0, 0, .12);
+    color: rgb(0, 0, 0, .26);
+ }
+
+ .mat-raised-button.mat-green, .mat-flat-button.mat-green{
+    background-color: rgb(0, 180, 0);
+    color: white;
+ }
+ .mat-raised-button.mat-blue, .mat-flat-button.mat-blue{
+    background-color: rgb(75, 75, 255);
+    color: white;
+ }
+ .mat-icon-button.mat-yellow{
+    color: rgb(4, 113, 255);
+ }
+
+ .mat-toolbar.mat-blue{
+     background-color: rgb(75, 75, 255);
+     color: white;
+ }
+
+ .text-danger{
+     color: red;
+ }

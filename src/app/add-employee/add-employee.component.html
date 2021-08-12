@@ -1,0 +1,42 @@
+<div style="padding: 2rem;">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" mat-table class="mat-elevation-z8" style="padding: 4rem; width: 30%; background-color: white;">
+            <h1>Add Employee</h1>
+            <table>
+                <tr>
+                    <th style="width: 25%;"></th>
+                    <th style="width: 75%;"></th>
+                    <th style="width: 25%;"></th>
+                </tr>
+                <tr>
+                    <!-- <td><label for="id">ID</label></td> -->
+                    <td><input type="hidden" id="id" name="id" formControlName="id" ></td>
+                    <!-- <td *ngIf="!myForm.get('id')?.valid && myForm.get('id')?.touched" class="text-danger">ID is Required!</td> -->
+                </tr>
+                <tr>
+                    <td><label for="first">First Name</label></td>
+                    <td><input type="text" id="first" name="first" formControlName="first" required></td>
+                    <td *ngIf="!myForm.get('first')?.valid && myForm.get('first')?.touched" class="text-danger">First Name is Required!</td>
+                </tr>
+                <tr>
+                    <td><label for="last">Last Name</label></td>
+                    <td><input type="text" name="last" formControlName="last" required></td>
+                    <td *ngIf="!myForm.get('last')?.valid && myForm.get('last')?.touched" class="text-danger">Last Name is Required!</td>
+                </tr>
+                <tr>
+                    <td><label for="salary">Salary</label></td>
+                    <td><input type="text" name="salary" formControlName="salary" required></td>
+                    <td *ngIf="myForm.get('salary')?.errors?.required && myForm.get('salary')?.touched" class="text-danger">Salary is Required!</td>
+                    <td *ngIf="myForm.get('salary')?.errors?.min && myForm.get('salary')?.touched" class="text-danger">Salary must be greater than 10000!</td>
+                </tr>
+                <tr>
+                    <td><label for="department">Department</label></td>
+                    <td><input type="text" name="department" formControlName="department" required></td>
+                    <td *ngIf="!myForm.get('department')?.valid && myForm.get('department')?.touched" class="text-danger">Department is Required!</td>
+                </tr>
+                <tr>
+                    <td><button type="submit" mat-raised-button color="blue">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+</div>
+

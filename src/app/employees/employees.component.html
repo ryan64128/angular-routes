@@ -1,0 +1,43 @@
+<div style="padding: 1rem; display: inline-block;">
+    <table mat-table class="mat-elevation-z8" style="padding: 1rem; background-color: white;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Salary</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr mat-row *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.first}}</td>
+                <td>{{emp.last}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.department}}</td>
+                <td *ngIf="getUsername() == 'admin'; else elseBlock">
+                    <button mat-raised-button color="green" [routerLink]="['details', emp.id]">Details</button>
+                </td>
+                <ng-template #elseBlock>
+                    <button mat-raised-button color="disabled">Details</button>
+                </ng-template>
+                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="yellow" (click)="showEditEmployee(emp)">
+                    <mat-icon>create</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="warn" (click)="deleteEmployee(emp.id)">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td>
+                    <button mat-raised-button color="blue" (click)="showAddEmployee()">Add Employee</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="display: inline-block;">
+    <router-outlet></router-outlet>
+</div>

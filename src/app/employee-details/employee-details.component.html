@@ -1,0 +1,34 @@
+<!-- <div class="mat-elevation-z8" style="padding: 1rem; margin: 1rem; width: 37%;">
+    <p><strong>Employee Id:</strong> {{currentEmployee.id}}</p>
+    <p><strong>Name:</strong> {{currentEmployee.first + ' ' + currentEmployee.last | namesToUpperCase}}</p>
+    <p><strong>Salary:</strong> {{currentEmployee.salary | currency}}</p>
+    <p><strong>Department:</strong> {{currentEmployee.department}}</p>
+</div> -->
+
+<div>
+    <table class="mat-elevation-z8" style="padding: 1rem; margin: 1rem; width: 50%; background-color: white;">
+        <tr>
+            <th style="width: 25%;"></th>
+            <th style="width: 75%;"></th>
+        </tr>
+        <tr>
+            <td><h3>Employee Details</h3></td>
+        </tr>
+        <tr>
+            <td><strong>Employee Id:</strong></td>
+            <td>{{currentEmployee.id}}</td>
+        </tr>
+        <tr>
+            <td><strong>Name:</strong> </td>
+            <td>{{currentEmployee.first + ' ' + currentEmployee.last | namesToUpperCase}}</td>
+        </tr>
+        <tr>
+            <td><strong>Salary:</strong> </td>
+            <td>{{currentEmployee.salary | currency}}</td>
+        </tr>
+        <tr>
+            <td><strong>Department:</strong> </td>
+            <td>{{currentEmployee.department}}</td>
+        </tr>
+    </table>
+</div>
